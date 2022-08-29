@@ -1,15 +1,15 @@
 import random
 choice=1
-while(choice!='N'):
-	lister=[]
-	f=open('Words.txt','r')
+while(choice!='N'):  #starts the game
+	lister=[]     # used to list all the words of words.txt to lister
+	f=open('Words.txt','r') #opens the file words.txt
 	lister=f.readlines()
 
-	word=random.choice(lister)
+	word=random.choice(lister)   #chooses a random word
 
-	g_word=[]
+	g_word=[]   #store the guessed word
 
-	s_word=[]
+	s_word=[]  # store the alphabets of selected word
 
 	hanglist=[
 	' 	____________________\n 	|	||\n 	|	||\n 	|	||\n',	
@@ -28,10 +28,10 @@ while(choice!='N'):
 				flag=1
 			count+=1
 		if flag==0:
-			return 0	
+			return 0
 		return g_word	
 		
-	
+	#initialize sword and gword
 	for char in word:
 		if(char!='\n'):	
 			s_word.append(char)
